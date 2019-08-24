@@ -23,6 +23,28 @@
   color: #61dafb;
 }
 
+.media-object{
+width: 200px;
+padding: 10px;
+}
+
+.media{
+border-top: 1px solid #ccc;
+padding-top: 20px;
+}
+
+.media-list{
+list-style: none;
+}
+#articlesList{
+font-size: 17px;
+}
+
+footer{
+padding-top: 20px;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
