@@ -1,12 +1,20 @@
 import React,{ Component } from 'react';
-import logo from './logo.svg';
+import Header from './components/header';
+import Footer from './components/footer';
+import Main from './components/main';
 import './App.css';
 
 class App extends Component{
     render(){
-      return (
-      <p>This is it</p>
-      )
+        return(
+            <React.Fragment>
+                <div className="container-fluid">
+                    <Header />
+                    <Main />
+                    <Footer />
+                </div>
+            </React.Fragment>
+        )
     }
 }
 export default App;
