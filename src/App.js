@@ -3,6 +3,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Main from './components/main';
 import './App.css';
+import './sources';
 
 class App extends Component{
 
@@ -13,7 +14,7 @@ class App extends Component{
     componentDidMount(){
         console.log("Component did mount")
         //using axios read from newsapi and populate the newsSources in the state
-        
+        this.setState({newsSources: getNewsSources()})
 
     }
 
