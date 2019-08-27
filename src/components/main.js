@@ -1,11 +1,10 @@
 import React from 'react'
+import Articles from '../components/articles'
 
 const Main = (props) =>{
     return(
         <React.Fragment>
-            <ul id="articlesList" className="media-list">
-
-            </ul>
+            <Articles articles = {props.articles} />
         </React.Fragment>
     )
 }
