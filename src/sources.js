@@ -10,10 +10,10 @@ export const newsSources = [
     },
 
     {
-        id: "ccn",
+        id: "cnn",
         name: "Cable News Network(CNN)",
         description: "This is the single source of truth. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.",
-        url: "http://www.ccn.com/news",
+        url: "http://www.cnn.com/news",
         category: "general",
         language: "en",
         country: "us"
