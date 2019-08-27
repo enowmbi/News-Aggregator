@@ -4,6 +4,7 @@ import React from 'react';
 const Article =(props)=>{
     return(
         <React.Fragment>
+            <hr/>
             <div className="media-left">
                 <a href={props.url} target="_blank" rel="noopener noreferrer"><img className="media-object" src={props.urlToImage} alt={props.title}/></a>
             </div>
