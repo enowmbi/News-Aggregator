@@ -1,4 +1,5 @@
 import React from 'react';
+import SourceDetails from '../components/source-details'
 
 const Header=(props)=>{
 
@@ -8,16 +9,15 @@ const Header=(props)=>{
             <h4>Select News Source </h4>
             <select id ="sourceNames" className="form-control" onChange = {(event)=>props.newsSourceSelectionChanged(event)} >
                 <option>Please Select News Source </option>
-                {/* <option value="enow">My name is Enow</option> */}
-                {/* <option value="oben">My name is Oben </option> */}
-                {/* <option value="ebai">My name is Ebai </option> */}
+                {props.sources.map(source =>( 
+                    <option value ={source.id} key={source.id}>{source.name}</option>
+                ))}
             </select>
-            <h6 id="sourceDescription">  </h6>
-            <div id="sourceUrl">
-            </div>
+            
+            <SourceDetails  selectedSource ={props.selectedSource}  />
+    
         </div>
     )
-
 }
 
 export default Header
