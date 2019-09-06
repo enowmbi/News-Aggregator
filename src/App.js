@@ -22,7 +22,8 @@ class App extends Component{
         try{
             const { data: sources } = await axios.get(url);
             //grab data and update state with   
-            this.setState({newsSources: sources});
+            // this.setState({newsSources: sources});
+            console.log(sources)
         }
         catch(ex){
             //get sample data - static from sources.js - due to internet connection issues
