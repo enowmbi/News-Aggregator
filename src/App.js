@@ -16,10 +16,10 @@ class App extends Component{
         newsArticles:[]
     }
 
-    async componentDidMount(){
+    componentDidMount(){
         const url = 'https://newsapi.org/v1/sources?language=en'
         //connect to the api here
-        await axios.get(url).then(response => {
+        axios.get(url).then(response => {
                 console.log(response.data);
                 const{data: sources} = response.data
                 this.setState({newsSources: sources})
