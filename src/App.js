@@ -19,21 +19,16 @@ class App extends Component{
     async componentDidMount(){
         const url = 'https://newsapi.org/v1/sources?language=en'
         //connect to the api here
-        try{
-            const { data: sources } = await axios.get(url);
-            //grab data and update state with   
-            // this.setState({newsSources: sources});
-            console.log(sources)
-        }
-        catch(ex){
-            //get sample data - static from sources.js - due to internet connection issues
-            const newsSources = getSources();
-            this.setState({newsSources: newsSources});
-            console.log( ex + ": Can't connect to the api end point") 
-            // if there are errors update the state
-            this.setState({errors: ex + "Can't connect to the api end point"});
-
-        }
+        await axios.get(url).then(response => {
+                console.log(response.data);
+                const{data: sources} = response.data
+                this.setState({newsSources: sources})
+            })
+            .catch(error => {
+                console.log(error);
+                const newsSources = getSources();
+                this.setState({newsSources: newsSources})
+            });
     }
 
 
