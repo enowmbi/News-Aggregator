@@ -16,19 +16,21 @@ class App extends Component{
         newsArticles:[]
     }
 
-    componentDidMount(){
-        const url = 'https://newsapi.org/v1/sources?language=en'
+    async componentDidMount(){
+        const url = 'https://newsapi.org/v1/sources?language=en';
         //connect to the api here
-        axios.get(url).then(response => {
-                console.log(response.data);
-                const{data: sources} = response.data
-                this.setState({newsSources: sources})
-            })
-            .catch(error => {
+        console.log("About to log data");
+        try{
+            const { data:newsSources } = await axios.get(url);
+            console.log(newsSources);
+            this.setState({ newsSources });
+            console.log(this.state.newsSources);
+        }
+        catch(error){
                 console.log(error);
                 const newsSources = getSources();
-                this.setState({newsSources: newsSources})
-            });
+                this.setState({newsSources: newsSources});
+            }
     }
 
 
