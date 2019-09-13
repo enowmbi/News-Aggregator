@@ -19,7 +19,6 @@ class App extends Component{
     async componentDidMount(){
      const url = 'https://newsapi.org/v1/sources?language=en&apiKey=c493e95394d444458f3488052428deab' 
         //connect to the api here
-        console.log("About to log data");
         try{
             const { data: newsSources } = await axios.get(url);
             const sources = newsSources.sources;
@@ -35,8 +34,6 @@ class App extends Component{
 
     handleNewsSourceSelectionChanged =(selected_source)=>{
         //change the source and update state 
-        console.log(selected_source)
-        
         const sources  = [...this.state.newsSources];
         const userSelectedSource = sources.find(source =>source.id === selected_source.trim());
         this.setState({selectedSource: userSelectedSource})
@@ -47,18 +44,17 @@ class App extends Component{
 
     async handleDisplayArticles(selected_source){
         //get articles from url based on source
-        console.log(selected_source);
         const url = `https://newsapi.org/v1/articles?language=en&source=${selected_source}&apiKey=c493e95394d444458f3488052428deab`;
 
         try{
             const { data: sources } = await axios.get(url);
-            //grab data and update state with   
             const articles = sources.articles;
             this.setState({newsArticles: articles});
         }
         catch(ex){
             //get sample data - static from sources.js - due to internet connection issues
-            const newsArticles = getArticles(selected_source.value);
+            const newsArticles = getArticles(selected_source);
+            console.log(newsArticles)
             this.setState({newsArticles: newsArticles});
             console.log( ex + ": Can't connect to the api end point") 
             // if there are errors update the state
