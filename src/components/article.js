@@ -7,7 +7,7 @@ const Article =(props)=>{
             <hr/>
             <div className="row">
                 <div className="col-md-2">
-                    <a href={props.url} target="_blank" rel="noopener noreferrer"><img className="media-object" src={props.urlToImage} alt={props.title}/></a>
+                    <a href={props.url} target="_blank" rel="noopener noreferrer"><img className="media-object img-responsive img-thumbnail" src={props.urlToImage} alt={props.title}/></a>
                 </div>
                 <div className ="col-md-10">
                     <div className="media-body">
