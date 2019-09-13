@@ -6,8 +6,9 @@ const Articles = (props) =>{
     return(
         <ul id="listOfArticles" className="media-list">
             {
-                 props.articles.map(article =>(
-                    <li key ={article.id}>
+                props.articles.map(article =>(
+                    
+                    <li key ={`${article.id}-${article.title}`}>
                         <Article 
                             id = {article.id}
                             name = {article.name}
